@@ -2,27 +2,15 @@
 function transformCoordinates(userCoordinates) {
     // 1.remove spaces
     let trimmed = userCoordinates.replace(/\s+/g, "");
-    // 2.count digits
-    let length = trimmed.length;
+
+    // 2.Split into two parts
     let half = trimmed.length / 2;
-    // 3. split in half
-    let X = "";
-    for (let i = 0; i < half; i++) {
-        X += trimmed[i];
-    }
+    let X = trimmed.slice(0, half);
+    let Y = trimmed.slice(half);
 
-    let Y = "";
-    for (let i = half; i < half*2; i++) {
-        Y += trimmed[i];
-    }
-
-    // 4. Check if X an Y contains 5 digits, if no add 0 until there is 5 digits in each
-    for (let i = X.length; i < 5; i++){
-       X = X.concat("0");
-    }
-    for (let i = Y.length; i < 5; i++){
-        Y = Y.concat("0");
-    }
+    // 3. Add 0 till 5 digits in each
+    X = X.padEnd(5, "0");
+    Y = Y.padEnd(5, "0");
 
     return [X, Y];
 }
