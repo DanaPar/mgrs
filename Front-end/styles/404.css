@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
+    min-height: 100vh;
+    font-family: sans-serif;
+    color: #888;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 auto;
+    color: #555;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+p {
+    margin: 0 auto;
+    width: 280px;
+}
+
